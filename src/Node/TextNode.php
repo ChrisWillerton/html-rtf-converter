@@ -1,8 +1,8 @@
 <?php
 
-namespace HtmlToRtf\Node;
+namespace ChrisWillerton\HtmlToRtf\Node;
 
-use HtmlToRtf\Node;
+use ChrisWillerton\HtmlToRtf\Node;
 
 /**
  * Class TextNode

@@ -1,9 +1,9 @@
 <?php
 
-namespace HtmlToRtf\Node\ElementNode;
+namespace ChrisWillerton\HtmlToRtf\Node\ElementNode;
 
-use HtmlToRtf\Node;
-use HtmlToRtf\Node\ElementNode;
+use ChrisWillerton\HtmlToRtf\Node;
+use ChrisWillerton\HtmlToRtf\Node\ElementNode;
 
 /**
  * Class LiElementNode

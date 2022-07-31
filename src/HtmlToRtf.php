@@ -1,6 +1,6 @@
 <?php
 
-namespace HtmlToRtf;
+namespace ChrisWillerton\HtmlToRtf;
 
 /**
  * Class HtmlToRtf

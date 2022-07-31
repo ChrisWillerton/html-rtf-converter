@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['html'])) {
     require_once('../src/HtmlToRtf.php');
-    $htmlToRtfConverter = new HtmlToRtf\HtmlToRtf($_POST['html']);
+    $htmlToRtfConverter = new ChrisWillerton\HtmlToRtf($_POST['html']);
     $htmlToRtfConverter->getRTFFile();
 }
 ?>

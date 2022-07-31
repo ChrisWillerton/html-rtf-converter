@@ -1,11 +1,11 @@
 <?php
 
-namespace HtmlToRtf;
+namespace ChrisWillerton\HtmlToRtf;
 
-use HtmlToRtf\Node\ElementNode;
-use HtmlToRtf\Node\NotSupportedNode;
-use HtmlToRtf\Node\TextNode;
-use HtmlToRtf\Utils\UnicodeUtils;
+use ChrisWillerton\HtmlToRtf\Node\ElementNode;
+use ChrisWillerton\HtmlToRtf\Node\NotSupportedNode;
+use ChrisWillerton\HtmlToRtf\Node\TextNode;
+use ChrisWillerton\HtmlToRtf\Utils\UnicodeUtils;
 
 /**
  * Class Node

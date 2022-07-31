@@ -16,7 +16,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "HtmlToRtf\\": "src"
+      "ChrisWillerton\\HtmlToRtf\\": "src"
     }
   }
 }

@@ -6,9 +6,9 @@
  * Time: 16:24
  */
 
-namespace HtmlToRtf\Node\ElementNode;
+namespace ChrisWillerton\HtmlToRtf\Node\ElementNode;
 
-use HtmlToRtf\Node\ElementNode;
+use ChrisWillerton\HtmlToRtf\Node\ElementNode;
 
 /**
  * Class TableElementNode

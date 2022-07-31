@@ -1,6 +1,6 @@
 <?php
 
-namespace HtmlToRtf\Node\ElementNode;
+namespace ChrisWillerton\HtmlToRtf\Node\ElementNode;
 
 /**
  * Class OlElementNode
