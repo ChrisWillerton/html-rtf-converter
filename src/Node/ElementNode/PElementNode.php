@@ -19,7 +19,7 @@ class PElementNode extends ElementNode
         $prepend = '{\pard\sa200\sl276\slmult1';
         $append = '\par}';
 
-        $css = $this->getAttribute('style');
+        $css = $this->getAttribute('style') ?? '';
         $css = strtolower($css);
 
         $styles = preg_split('/;/', $css);

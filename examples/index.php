@@ -1,13 +1,16 @@
 <?php
+require_once '../vendor/autoload.php';
+
 if (isset($_POST['html'])) {
-    require_once('../src/HtmlToRtf.php');
-    $htmlToRtfConverter = new ChrisWillerton\HtmlToRtf($_POST['html']);
+    $htmlToRtfConverter = new ChrisWillerton\HtmlToRtf\HtmlToRtf($_POST['html']);
     $htmlToRtfConverter->getRTFFile();
 }
 ?>
 <!DOCTYPE html>
 <html>
-<head><!-- CDN hosted by Cachefly -->
+
+<head>
+    <!-- CDN hosted by Cachefly -->
     <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
     <script>
         tinymce.init({
@@ -19,10 +22,11 @@ if (isset($_POST['html'])) {
         });
     </script>
 </head>
+
 <body>
 
-<form method="post">
-    <textarea name='html'>
+    <form method="post">
+        <textarea name='html'>
 
         <p>Welcome to the HTML-to-RTF-converter demo!</p>
         <p>If you have questions or need help, feel free to visit our <a
@@ -62,9 +66,10 @@ if (isset($_POST['html'])) {
         </table>
 
     </textarea>
-    <input type="submit" value="Download as RTF">
-</form>
+        <input type="submit" value="Download as RTF">
+    </form>
 
 
 </body>
+
 </html>
