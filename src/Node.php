@@ -132,6 +132,24 @@ class Node
                  * @var \DOMElement $node
                  */
                 switch ($node->tagName) {
+                    case 'h1';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs60 ', '\par}');
+                        break;
+                    case 'h2';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs50 ', '\par}');
+                        break;
+                    case 'h3';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs40 ', '\par}');
+                        break;
+                    case 'h4';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs30 ', '\par}');
+                        break;
+                    case 'h5';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs20 ', '\par}');
+                        break;
+                    case 'h6';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs18 ', '\par}');
+                        break;
                     case 'body':
                         $nodeSpecific = new Node($node);
                         break;
