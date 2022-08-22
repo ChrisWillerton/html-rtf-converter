@@ -86,6 +86,9 @@ class ElementNode extends Node
      */
     public function getAttribute($name)
     {
+        if ($this->getAttributes() === null) {
+            return null;
+        }
         return $this->getAttributes()[$name];
     }
 

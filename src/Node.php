@@ -126,12 +126,30 @@ class Node
         $nodeSpecific = null;
 
         switch ($node->nodeType) {
-            //HTML element node
+                //HTML element node
             case XML_ELEMENT_NODE:
                 /**
                  * @var \DOMElement $node
                  */
                 switch ($node->tagName) {
+                    case 'h1';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs60 ', '\par}');
+                        break;
+                    case 'h2';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs50 ', '\par}');
+                        break;
+                    case 'h3';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs40 ', '\par}');
+                        break;
+                    case 'h4';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs30 ', '\par}');
+                        break;
+                    case 'h5';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs20 ', '\par}');
+                        break;
+                    case 'h6';
+                        $nodeSpecific = new ElementNode($node, '{\pard \b\fs18 ', '\par}');
+                        break;
                     case 'body':
                         $nodeSpecific = new Node($node);
                         break;
@@ -162,29 +180,29 @@ class Node
                     case 'tr':
                     case 'th':
                     case 'td':
-                        $class = '\\HtmlToRtf\\Node\\ElementNode\\' . ucfirst(strtolower($node->tagName)) . 'ElementNode';
+                        $class = 'ChrisWillerton\\HtmlToRtf\\Node\\ElementNode\\' . ucfirst(strtolower($node->tagName)) . 'ElementNode';
                         $nodeSpecific = new $class($node);
                         break;
 
-                    //TODO: html special chars (&mbsp; => \~)
+                        //TODO: html special chars (&mbsp; => \~)
 
                     default:
                         $nodeSpecific = new NotSupportedNode($node);
                 }
                 break;
 
-            //Plaintext nodes
+                //Plaintext nodes
             case XML_TEXT_NODE:
                 $nodeSpecific = new TextNode($node);
                 break;
 
-            //start document type nodes
+                //start document type nodes
             case XML_HTML_DOCUMENT_NODE:
             case XML_DOCUMENT_TYPE_NODE:
                 $nodeSpecific = new Node($node);
                 break;
 
-            //remove non supported nodes
+                //remove non supported nodes
             default:
                 $nodeSpecific = new NotSupportedNode($node);
                 break;

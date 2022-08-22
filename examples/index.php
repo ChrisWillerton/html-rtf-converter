@@ -1,13 +1,16 @@
 <?php
+require_once '../vendor/autoload.php';
+
 if (isset($_POST['html'])) {
-    require_once('../src/HtmlToRtf.php');
-    $htmlToRtfConverter = new ChrisWillerton\HtmlToRtf($_POST['html']);
+    $htmlToRtfConverter = new ChrisWillerton\HtmlToRtf\HtmlToRtf($_POST['html']);
     $htmlToRtfConverter->getRTFFile();
 }
 ?>
 <!DOCTYPE html>
 <html>
-<head><!-- CDN hosted by Cachefly -->
+
+<head>
+    <!-- CDN hosted by Cachefly -->
     <script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
     <script>
         tinymce.init({
@@ -19,10 +22,18 @@ if (isset($_POST['html'])) {
         });
     </script>
 </head>
+
 <body>
 
-<form method="post">
-    <textarea name='html'>
+    <form method="post">
+        <textarea name='html'>
+
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
 
         <p>Welcome to the HTML-to-RTF-converter demo!</p>
         <p>If you have questions or need help, feel free to visit our <a
@@ -36,9 +47,10 @@ if (isset($_POST['html'])) {
                 <li><em>Test item 2</em></li>
             </ul>
         </ul>
-        <ul>
+        <ol>
             <li>Test item 3</li>
-        </ul>
+            <li>Test item 4</li>
+        </ol>
         <p style="text-align: center;"><strong>Enjoy our software and create great content!</strong></p>
         <p>Oh, and by the way, don't forget to check out <a href="http://www.tinymce.com"
                                                             target="_blank">TinyMCE</a>!</p>
@@ -62,9 +74,10 @@ if (isset($_POST['html'])) {
         </table>
 
     </textarea>
-    <input type="submit" value="Download as RTF">
-</form>
+        <input type="submit" value="Download as RTF">
+    </form>
 
 
 </body>
+
 </html>
