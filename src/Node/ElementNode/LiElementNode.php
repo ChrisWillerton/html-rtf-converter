@@ -53,7 +53,7 @@ class LiElementNode extends ElementNode
             $rtf = parent::parse();
         } else if ($parentNode instanceof OlElementNode) {
             preg_match('/li\[(\d+)\]/', end($nodePath), $matches);
-            $orderId = $matches[1];
+            $orderId = $matches[1] ?? 1;
             if ($setIndent) {
                 $this->setRtfPrepend('{\pntext\f0 ' . $orderId . '.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}\fi-360\li' . $indent . '\sa200\sl276\slmult1 ');
             } else {
